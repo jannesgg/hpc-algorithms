@@ -1,0 +1,19 @@
+No configs found; falling back on auto-configuration
+No configs specified for local runner
+Creating temp directory /var/folders/6q/9pbgjytn4sqfjhrhnpk6l6fc0000gn/T/assi2_group.jannes.20180430.131201.631614
+Running step 1 of 1...
+reading from STDIN
+Streaming final output from /var/folders/6q/9pbgjytn4sqfjhrhnpk6l6fc0000gn/T/assi2_group.jannes.20180430.131201.631614/output...
+"std"	0.2756117248
+"bin5"	18
+"max"	0.996526
+"min"	0.014878
+"bin1"	19
+"bin2"	23
+"bin3"	20
+"bin4"	24
+Removing temp directory /var/folders/6q/9pbgjytn4sqfjhrhnpk6l6fc0000gn/T/assi2_group.jannes.20180430.131201.631614...
+
+real	0m6.101s
+user	0m6.927s
+sys	0m2.244s

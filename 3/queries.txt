@@ -1,0 +1,60 @@
+#### SPARQL QUERIES ####
+
+
+## See all hosts, event topics and event times
+
+PREFIX : <http://example.com/resource#>
+SELECT ?person_name ?topic ?time 
+WHERE
+{
+    ?person :name ?person_name .
+    ?person :hosts ?event . 
+    ?event :topic ?topic .
+    ?event :starts ?time .  
+}
+
+## Find events starting between two dates and times
+
+PREFIX : <http://example.com/resource#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?topic ?time 
+WHERE
+{
+    ?person :name ?person_name .
+    ?person :hosts ?event . 
+    ?event :topic ?topic .
+    ?event :starts ?time .
+    
+    FILTER (?time > xsd:dateTime("2018-05-01T00:00:00") &&
+    ?time < xsd:dateTime("2018-05-30T00:00:00")) .
+}
+
+## Find events with topics containing "auto"
+
+PREFIX : <http://example.com/resource#>
+SELECT ?topic 
+WHERE
+{
+    ?person :name ?person_name .
+    ?person :hosts ?event . 
+    ?event :topic ?topic .
+    
+    FILTER (regex(LCASE(?topic), "auto")) .
+}
+
+## Length of events in hours
+
+PREFIX : <http://example.com/resource#>
+SELECT ?topic ?duration_in_hours 
+WHERE
+{
+    ?person :name ?person_name .
+    ?person :hosts ?event . 
+    ?event :topic ?topic .
+    ?event :starts ?starts .
+    ?event :ends ?ends .
+    
+    BIND(
+        IF((Minutes(?ends) - Minutes(?starts)/60)<0,(Hours(?ends) - Hours(?starts))+(Minutes(?ends) - Minutes(?starts))/60,
+        IF((Minutes(?ends) - Minutes(?starts)/60)>=0,(Hours(?ends) - Hours(?starts))+(Minutes(?ends) - Minutes(?starts))/60, 0)) AS ?duration_in_hours) .
+}

@@ -1,0 +1,18 @@
+No configs found; falling back on auto-configuration
+No configs specified for local runner
+Creating temp directory /var/folders/6q/9pbgjytn4sqfjhrhnpk6l6fc0000gn/T/assi2.jannes.20180430.113831.066523
+Running step 1 of 1...
+Streaming final output from /var/folders/6q/9pbgjytn4sqfjhrhnpk6l6fc0000gn/T/assi2.jannes.20180430.113831.066523/output...
+"min"	0.085298
+"std"	0.264569734
+"bin4"	2
+"bin5"	5
+"max"	0.932741
+"bin1"	2
+"bin2"	5
+"bin3"	6
+Removing temp directory /var/folders/6q/9pbgjytn4sqfjhrhnpk6l6fc0000gn/T/assi2.jannes.20180430.113831.066523...
+
+real	0m6.754s
+user	0m12.932s
+sys	0m4.037s
